@@ -32,6 +32,14 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   mkmall:
     # Config indicated by + and applies to all files under models/example/
+    
     stage:
       +materialized: table
-        
+    intermediate:
+      +materialized: table
+      +transient: false
+    
+data_tests:
+  +schema: newtest
+      
+

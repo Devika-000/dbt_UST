@@ -1,0 +1,11 @@
+models:
+  - name: int_orders
+    columns:
+      - name: order_total_price_inr
+        tests:
+          - is_even:
+              arguments:
+                checkvalue: 80
+              config:
+                store_failures: true
+                schema: testing

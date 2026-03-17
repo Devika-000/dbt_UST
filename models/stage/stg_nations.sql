@@ -1,6 +1,10 @@
+{{ config(
+    query_tag= 'nations', tags = 'one'
+)}}
+
 select 
     n_nationkey nation_id, 
     n_name name, 
     n_regionkey region_id, 
     n_comment comment
-from sourcedb.mk_mall.nations
+from {{source('src01','nations')}}
